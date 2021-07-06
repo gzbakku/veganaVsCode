@@ -1,0 +1,592 @@
+{
+
+    "check":{
+        "prefix":["check"],
+        "body":["if(!${1:var_name}){",
+            "\t${2:work}",
+            "}"
+        ],
+        "description":"vegana make a dom element"
+    },
+
+    "check.array_len":{
+        "prefix":["check.array_len"],
+        "body":["if(!(${1:var_name} instanceof Array) || ${1:var_name}.length === 0){",
+            "\t${2:work}",
+            "}"
+        ],
+        "description":"vegana make a dom element"
+    },
+
+    "check.object_len":{
+        "prefix":["check.object_len"],
+        "body":["if(!(${1:var_name} instanceof Object) || Object.keys(${1:var_name}).length === 0){",
+            "\t${2:work}",
+            "}"
+        ],
+        "description":"vegana make a dom element"
+    },
+
+    "make":{
+        "prefix":["make"],
+        "body":["const ${1:name} = engine.make.${2:type}({",
+            "\tparent:${3:parent},",
+            "\tclass:\"${4:class}\",","\t${5:more}",
+        "});"],
+        "description":"vegana make a dom element"
+    },
+    "image":{
+        "prefix":["image"],
+        "body":["const ${1:name} = engine.make.image({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"${4|local,url|}\",",
+            "\tlocation:\"${5:location}\",",
+        "});"],
+        "description":"vegana make image dom element"
+    },
+    "image.local":{
+        "prefix":["image.local"],
+        "body":["const ${1:name} = engine.make.image({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\tlocation:\"${4:location}\",",
+        "});"],
+        "description":"vegana make locally hosted image dom element"
+    },
+    "image.url":{
+        "prefix":["image.url"],
+        "body":["const ${1:name} = engine.make.image({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"url\",",
+            "\tlocation:\"${4:location}\",",
+        "});"],
+        "description":"vegana make url hosted image dom element"
+    },
+
+    "a":{
+        "prefix":[".a"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"${4|local,url|}\",",
+            "\ttext:\"${5:text}\",",
+            "\thref:\"${6:location}\",",
+        "});"],
+        "description":"vegana make A dom element"
+    },
+    "a.url":{
+        "prefix":[".a.url"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"url\",",
+            "\ttext:\"${4:text}\",",
+            "\thref:\"${5:location}\",",
+        "});"],
+        "description":"vegana make A URL dom element"
+    },
+    "a.url.base":{
+        "prefix":[".a.url.base"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"url\",",
+            "\ttext:\"${4:text}\",",
+            "\thref:\"${5:location}\",",
+            "\tbaseFunction:()=>{","\t\t${6:func}","\t},",
+        "});"],
+        "description":"vegana make A URL dom element with base function this function triggers before the default is triggered."
+    },
+    "a.url.super":{
+        "prefix":[".a.url.super"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"url\",",
+            "\ttext:\"${4:text}\",",
+            "\thref:\"${5:location}\",",
+            "\tsuperFunction:()=>{","\t\t${6:func}","\t},",
+        "});"],
+        "description":"vegana make A URL dom element with super function this function cancels the default behaviour."
+    },
+    "a.page":{
+        "prefix":[".a.page"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\ttext:\"${4:text}\",",
+            "\tpage:\"${5:page}Page\",",
+        "});"],
+        "description":"vegana make A Page Local dom element"
+    },
+    "a.page.base":{
+        "prefix":[".a.page.base"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\ttext:\"${4:text}\",",
+            "\tpage:\"${5:page}Page\",",
+            "\tbaseFunction:()=>{","\t\t${6:func}","\t},",
+        "});"],
+        "description":"vegana make A Page Local dom element with base function this function triggers before the default is triggered."
+    },
+    "a.page.super":{
+        "prefix":[".a.page.super"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\ttext:\"${4:text}\",",
+            "\tpage:\"${5:page}Page\",",
+            "\tsuperFunction:()=>{","\t\t${6:func}","\t},",
+        "});"],
+        "description":"vegana make A Page Local dom element with super function this function cancels the default behaviour."
+    },
+    "a.cont":{
+        "prefix":[".a.cont"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\ttext:\"${4:text}\",",
+            "\tpage:\"${5:page}Page\",",
+            "\tcont:\"${6:cont}Cont\",",
+        "});"],
+        "description":"vegana make A Cont Local dom element"
+    },
+    "a.cont.base":{
+        "prefix":[".a.cont.base"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\ttext:\"${4:text}\",",
+            "\tpage:\"${5:page}Page\",",
+            "\tcont:\"${6:cont}Cont\",",
+            "\tbaseFunction:()=>{","\t\t${6:func}","\t},",
+        "});"],
+        "description":"vegana make A Cont Local dom element with base function this function triggers before the default is triggered."
+    },
+    "a.cont.super":{
+        "prefix":[".a.cont.super"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\ttext:\"${4:text}\",",
+            "\tpage:\"${5:page}Page\",",
+            "\tcont:\"${6:cont}Cont\",",
+            "\tsuperFunction:()=>{","\t\t${6:func}","\t},",
+        "});"],
+        "description":"vegana make A Cont Local dom element with super function this function cancels the default behaviour."
+    },
+    "a.panel":{
+        "prefix":[".a.panel"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\ttext:\"${4:text}\",",
+            "\tpage:\"${5:page}Page\",",
+            "\tcont:\"${6:cont}Cont\",",
+            "\tpanel:\"${7:panel}Panel\",",
+        "});"],
+        "description":"vegana make A Panel Local dom element"
+    },
+    "a.panel.base":{
+        "prefix":[".a.panel.base"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\ttext:\"${4:text}\",",
+            "\tpage:\"${5:page}Page\",",
+            "\tcont:\"${6:cont}Cont\",",
+            "\tpanel:\"${7:panel}Panel\",",
+            "\tbaseFunction:()=>{","\t\t${6:func}","\t},",
+        "});"],
+        "description":"vegana make A Panel Local dom element with base function this function triggers before the default is triggered."
+    },
+    "a.panel.super":{
+        "prefix":[".a.panel.super"],
+        "body":["const ${1:name} = engine.make.a({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"local\",",
+            "\ttext:\"${4:text}\",",
+            "\tpage:\"${5:page}Page\",",
+            "\tcont:\"${6:cont}Cont\",",
+            "\tpanel:\"${7:panel}Panel\",",
+            "\tsuperFunction:()=>{","\t\t${6:func}","\t},",
+        "});"],
+        "description":"vegana make A Local Panel dom element with super function this function cancels the default behaviour."
+    },
+
+    "button":{
+        "prefix":["button"],
+        "body":["engine.make.button({",
+            "\tparent:${1:parent},",
+            "\tclass:\"${2:class}\",",
+            "\tvalue:\"${3:value}\",",
+            "\tfunction:()=>{","\t\t${4:func}","\t},",
+        "});"],
+        "description":"vegana make Button dom element"
+    },
+    "button.var":{
+        "prefix":["button.var"],
+        "body":["const ${1:name} = engine.make.button({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\tvalue:\"${4:value}\",",
+            "\tfunction:()=>{","\t\t${5:func}","\t},",
+        "});"],
+        "description":"vegana make Button dom element"
+    },
+
+    "heading":{
+        "prefix":["heading"],
+        "body":["engine.make.heading({",
+            "\tparent:${1:parent},",
+            "\tclass:\"${2:class}\",",
+            "\tlevel:${3:level},",
+            "\ttext:\"${4:value}\",",
+        "});"],
+        "description":"vegana make heading dom element"
+    },
+
+    "textarea":{
+        "prefix":["textarea"],
+        "body":["engine.make.textarea({",
+            "\tparent:${1:parent},",
+            "\tclass:\"${2:class}\",",
+            "\rows:${3:rows},",
+            "\ttext:\"${4:value}\",",
+        "});"],
+        "description":"vegana make textarea dom element"
+    },
+
+    "input":{
+        "prefix":["input"],
+        "body":["const ${1:name} = engine.make.input({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\ttype:\"${4|string,number,checkbox,color,date,datetime-local,email,file,hidden,image,month,number,password,radio,range,reset,search,submit,tel,text,time,url,week|}\",",
+            "\tplaceholder:\"${5:placeholder}\",",
+            "\tvalue:\"${6:value}\",",
+            "\tfunction:()=>{","\t\t${7:func}","\t},",
+        "});"],
+        "description":"vegana make Button dom element"
+    },
+
+    "list":{
+        "prefix":["list"],
+        "body":["const ${1:name} = engine.make.list({",
+            "\tparent:${2:parent},",
+            "\ttype:\"${3|ol,ul|}\",",
+            "\tclass:\"${4:class}\",",
+            "\titemClass:\"${5:itemClass}\",",
+            "\tdata:[",
+            "\t\t{text:\"\"},",
+            "\t]",
+        "});"],
+        "description":"vegana make list dom element"
+    },
+    "list.function":{
+        "prefix":["list.function"],
+        "body":["const ${1:name} = engine.make.list({",
+            "\tparent:${2:parent},",
+            "\ttype:\"${3|ol,ul|}\",",
+            "\tclass:\"${4:class}\",",
+            "\titemClass:\"${5:itemClass}\",",
+            "\tdata:[",
+            "\t\t/*",
+            "\t\t\tfunction will overtake master function",
+            "\t\t\tclass will overtake itemClass",
+            "\t\t*/",
+            "\t\t{text:\"\",function:()=>{},class:\"\"},",
+            "\t\t{text:\"\"},",
+            "\t],",
+            "\t/*",
+            "\t\tthis is master function and it will be applied on list items not to the whole list itself",
+            "\t*/",
+            "\tfunction:()=>{","\t\t${6:func}","\t},",
+        "});"],
+        "description":"vegana make list dom element with function syntax and guide"
+    },
+    "listItem":{
+        "prefix":["listItem"],
+        "body":["engine.make.listItem({",
+            "\tlist_id:${1:list_id},",
+            "\titemClass:\"${2:itemClass}\",",
+            "\ttext:\"${3:text}\",",
+        "});"],
+        "description":"vegana make list dom element"
+    },
+    "listItem.function":{
+        "prefix":["listItem.function"],
+        "body":["engine.make.listItem({",
+            "\tlist_id:${1:list_id},",
+            "\titemClass:\"${2:itemClass}\",",
+            "\ttext:\"${3:text}\",",
+            "\tfunction:()=>{","\t\t${4:func}","\t},",
+        "});"],
+        "description":"vegana make list dom element"
+    },
+    "listItems":{
+        "prefix":["listItems"],
+        "body":["engine.make.listItems({",
+            "\tlist_id:${1:list_id},",
+            "\titemClass:\"${2:itemClass}\",",
+            "\ttext:\"${3:text}\",",
+            "\tdata:[",
+            "\t\t{text:\"\"},",
+            "\t\t{text:\"\",function:()=>{},class:\"\"},",
+            "\t]",
+        "});"],
+        "description":"vegana make list dom element"
+    },
+
+    "select":{
+        "prefix":["select"],
+        "body":["const ${1:name} = engine.make.select({",
+            "\tparent:${2:parent},",
+            "\tclass:\"${3:class}\",",
+            "\toptions:[",
+            "\t\t{text:\"\",value:\"\"},",
+            "\t\t{text:\"\",value:\"\",disabled:true},",
+            "\t],select",
+            "\tfunction:()=>{","\t\t${4:func}","\t},",
+        "});"],
+        "description":"vegana make select dom element"
+    },
+
+    "add.function":{
+        "prefix":["add.function"],
+        "body":["engine.add.function(\"${1:name}\",()=>{",
+            "\t${2:function}",
+        "});"],
+        "description":"vegana add function"
+    },
+
+    "add.comp":{
+        "prefix":["add.comp"],
+        "body":["engine.add.comp(\"${1:name}\",${2:module});"],
+        "description":"vegana add comp"
+    },
+
+    "add.object":{
+        "prefix":["add.object"],
+        "body":["engine.add.function(\"${1:name}\",{",
+            "\t${2:key}",
+        "});"],
+        "description":"vegana add object"
+    },
+
+    "data.get":{
+        "prefix":["data.get"],
+        "body":["engine.data.get(\"${1:key}\",\"${2|local,session,mem|}\");"],
+        "description":"vegana data get item"
+    },
+
+    "data.set":{
+        "prefix":["data.set"],
+        "body":["engine.data.set(\"${1:key}\",${2:data},\"${3|local,session,mem|}\");"],
+        "description":"vegana data set item"
+    },
+
+    "data.reset":{
+        "prefix":["data.reset"],
+        "body":["engine.data.reset(\"${1:key}\",${2:data},\"${3|local,session,mem|}\");"],
+        "description":"vegana data reset item"
+    },
+
+    "data.delete":{
+        "prefix":["data.delete"],
+        "body":["engine.data.delete(\"${1:key}\",\"${2|local,session,mem|}\");"],
+        "description":"vegana data delete item"
+    },
+
+    "page":{
+        "prefix":["page"],
+        "body":["engine.get.pageModule(\"${1:pg_name}Page\");"],
+        "description":"vegana get pageModule"
+    },
+
+    "cont":{
+        "prefix":["cont"],
+        "body":["engine.get.contModule(\"${1:pg_name}Page\",\"${2:cn_name}Cont\");"],
+        "description":"vegana get contModule"
+    },
+
+    "panel":{
+        "prefix":["panel"],
+        "body":["engine.get.panelModule(\"${1:pg_name}Page\",\"${2:cn_name}Cont\",\"${3:pn_name}Panel\");"],
+        "description":"vegana get panelModule"
+    },
+
+    "get.width":{
+        "prefix":["get.width"],
+        "body":["engine.get.body.width();"],
+        "description":"vegana get body width"
+    },
+
+    "get.height":{
+        "prefix":["get.height"],
+        "body":["engine.get.body.height();"],
+        "description":"vegana get body height"
+    },
+
+    "get.element":{
+        "prefix":["get.element"],
+        "body":["engine.get.element(${1:element_id});"],
+        "description":"vegana get element"
+    },
+
+    "get.elementPosition":{
+        "prefix":["get.elementPosition"],
+        "body":["engine.get.elementPosition(${1:element_id});"],
+        "description":"vegana get elementPosition"
+    },
+
+    "get.host":{
+        "prefix":["get.host"],
+        "body":["engine.get.host();"],
+        "description":"vegana get host"
+    },
+
+    "get.os":{
+        "prefix":["get.os"],
+        "body":["engine.get.os();"],
+        "description":"vegana get os"
+    },
+
+    "get.platform":{
+        "prefix":["get.platform"],
+        "body":["engine.get.platform(${1|\"mobile\",\"pc\",\"cordova\",\"electron\",\"browser\",\"\"|});"],
+        "description":"vegana get platform"
+    },
+
+    "load.css":{
+        "prefix":["load.css"],
+        "body":[
+            "const ${1:load_var_name} = await engine.loader.css(\"${2:location}\",${3|true,false|})",
+            ".then(()=>{return true;})",
+            ".catch(()=>{return false;});"
+        ],
+        "description":"vegana loader css"
+    },
+
+    "load.comp":{
+        "prefix":["load.comp"],
+        "body":[
+            "const ${1:load_var_name} = await engine.loader.load.comp(\"${2:comp_name}Comp\",${3|true,false|})",
+            ".then(()=>{return true;})",
+            ".catch(()=>{return false;});"
+        ],
+        "description":"vegana loader load comp"
+    },
+
+    "load.page":{
+        "prefix":["load.page"],
+        "body":[
+            "const ${1:load_var_name} = await engine.loader.load.page(\"${2:page_name}Page\",${3|true,false|})",
+            ".then(()=>{return true;})",
+            ".catch(()=>{return false;});"
+        ],
+        "description":"vegana loader load page"
+    },
+
+    "load.cont":{
+        "prefix":["load.cont"],
+        "body":[
+            "const ${1:load_var_name} = await engine.loader.load.cont(\"${2:page_name}Page\",\"${3:cont_name}Cont\",${4|true,false|})",
+            ".then(()=>{return true;})",
+            ".catch(()=>{return false;});"
+        ],
+        "description":"vegana loader load cont"
+    },
+
+    "load.panel":{
+        "prefix":["load.panel"],
+        "body":[
+            "const ${1:load_var_name} = await engine.loader.load.panel(\"${2:page_name}Page\",\"${3:cont_name}Cont\",\"${4:panel_name}Panel\",${5|true,false|})",
+            ".then(()=>{return true;})",
+            ".catch(()=>{return false;});"
+        ],
+        "description":"vegana loader load panel"
+    },
+
+    "load.js":{
+        "prefix":["load.js"],
+        "body":[
+            "const ${1:load_var_name} = await engine.loader.load.js({",
+            "\ttype:\"${2|url,local|}\",",
+            "\turl:\"${3:some_location}\"",
+            "})",
+            ".then(()=>{return true;})",
+            ".catch(()=>{return false;});"
+        ],
+        "description":"vegana loader load wasm"
+    },
+
+    "load.wasm":{
+        "prefix":["load.wasm"],
+        "body":[
+            "const ${1:load_var_name} = await engine.loader.load.wasm({",
+            "\ttype:\"${2|url,local|}\",",
+            "\tmodule:\"${3:wasm_module_name}\"",
+            "})",
+            ".then(()=>{return true;})",
+            ".catch(()=>{return false;});"
+        ],
+        "description":"vegana loader load wasm"
+    },
+
+    "load.sassPack":{
+        "prefix":["load.sassPack"],
+        "body":[
+            "const ${1:load_var_name} = await engine.loader.load.sassPack(\"${2:sassPack_name}\"})",
+            ".then(()=>{return true;})",
+            ".catch(()=>{return false;});"
+        ],
+        "description":"vegana loader load sassPack"
+    },
+
+    "load.image":{
+        "prefix":["load.image"],
+        "body":[
+            "engine.loader.load.image(\"${2:location}\");"
+        ],
+        "description":"vegana loader load image"
+    },
+
+    "meta.add":{
+        "prefix":["meta.add"],
+        "body":["engine.meta.add({",
+        "\tname:\"${1:tag_name}\",",
+        "\tcontent:\"${2:tag_content}\"",
+        "});"],
+        "description":"vegana meta add api"
+    },
+
+    "meta.update":{
+        "prefix":["meta.update"],
+        "body":["engine.meta.update({",
+        "\tname:\"${1:tag_name}\",",
+        "\tcontent:\"${2:tag_content}\"",
+        "});"],
+        "description":"vegana meta update api"
+    },
+
+    "meta.delete":{
+        "prefix":["meta.delete"],
+        "body":["engine.meta.delete(\"${1:tag_name}\");"],
+        "description":"vegana meta delete api"
+    }
+
+}
