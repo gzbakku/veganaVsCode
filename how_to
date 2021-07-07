@@ -1,0 +1,15 @@
+
+
+org is tejasavdutt
+
+generate a new publisher token 
+
+download vsce
+
+npm i -g vsce
+
+vsce login tejasavdutt
+
+paste pblisher token here
+
+vcse publish
