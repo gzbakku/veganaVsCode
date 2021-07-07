@@ -1,5 +1,17 @@
 {
 
+    ".r!":{
+        "prefix":[".r!"],
+        "body":["return false;"],
+        "description":"return false;"
+    },
+
+    ".r":{
+        "prefix":[".r"],
+        "body":["return true;"],
+        "description":"return true;"
+    },
+
     "check":{
         "prefix":["check"],
         "body":["if(!${1:var_name}){",
@@ -587,6 +599,290 @@
         "prefix":["meta.delete"],
         "body":["engine.meta.delete(\"${1:tag_name}\");"],
         "description":"vegana meta delete api"
+    },
+
+    "params.add":{
+        "prefix":["params.add"],
+        "body":["engine.params.add(\"${1:key}\",\"${2:value}\");"],
+        "description":"vegana params add api"
+    },
+
+    "params.get":{
+        "prefix":["params.get"],
+        "body":["engine.params.get();"],
+        "description":"vegana params get api"
+    },
+
+    "params.delete":{
+        "prefix":["params.delete"],
+        "body":["engine.params.delete(\"${1:key}\");"],
+        "description":"vegana params delete api"
+    },
+
+    "params.native.get":{
+        "prefix":["params.native.get"],
+        "body":["engine.params.native.get();"],
+        "description":"vegana params native get api"
+    },
+
+    "params.native.push":{
+        "prefix":["params.native.push"],
+        "body":["engine.params.native.push(\"${1:value}\");"],
+        "description":"vegana params native push api"
+    },
+
+    "request":{
+        "prefix":["request"],
+        "body":["const ${1:var_name} = await engine.request({",
+        "\t url:\"${2:url}\",",
+        "\t method:\"${3|post,get,put,delete|}\",",
+        "\t body:{",
+        "\t\t${4:request_body}",
+        "\t }",
+        "});"],
+        "description":"vegana request api"
+    },
+
+    "router.comps":{
+        "prefix":["router.comps"],
+        "body":["const ${1:var_name} = engine.router.init.comps(${2:parent_id},${3:comp_module},${4:data},\"${5:class}\");"],
+        "description":"vegana router comps api"
+    },
+
+    "router.conts":{
+        "prefix":["router.conts"],
+        "body":["engine.router.init.conts(${1:parent_id},\"${2:class}\");"],
+        "description":"vegana router conts api"
+    },
+
+    "router.panels":{
+        "prefix":["router.panels"],
+        "body":["engine.router.init.panels(${1:parent_id},\"${2:class}\");"],
+        "description":"vegana router panels api"
+    },
+
+    "nav.comp":{
+        "prefix":["nav.comp"],
+        "body":["engine.router.navigate.${1|to,new|}.comp(${2:module},${3:data},${4:router_id});"],
+        "description":"vegana router navigate comp api"
+    },
+
+    "nav.page":{
+        "prefix":["nav.page"],
+        "body":["engine.router.navigate.${1|to,new|}.page(${2:module},${3:data});"],
+        "description":"vegana router navigate page api"
+    },
+
+    "nav.cont":{
+        "prefix":["nav.cont"],
+        "body":["engine.router.navigate.${1|to,new|}.cont(${2:module},${3:data});"],
+        "description":"vegana router navigate cont api"
+    },
+
+    "nav.panel":{
+        "prefix":["nav.panel"],
+        "body":["engine.router.navigate.${1|to,new|}.panel(${2:module},${3:data});"],
+        "description":"vegana router navigate panel api"
+    },
+
+    "session.start":{
+        "prefix":["session.start"],
+        "body":["engine.session.start(${1:token_object},${2:user_object},${3:uniqe_user_id_string},${4:remember_session_boolean});"],
+        "description":"vegana session start api"
+    },
+
+    "session.check":{
+        "prefix":["session.check"],
+        "body":["const ${1:var_name} = engine.session.check();"],
+        "description":"vegana session check api"
+    },
+
+    "session.end":{
+        "prefix":["session.end"],
+        "body":["engine.session.end();"],
+        "description":"vegana session end api"
+    },
+
+    "session.get.user":{
+        "prefix":["session.get.user"],
+        "body":["const ${1:var_name} = engine.session.get.user();"],
+        "description":"vegana session get user api"
+    },
+
+    "session.get.token":{
+        "prefix":["session.get.token"],
+        "body":["const ${1:var_name} = engine.session.get.token();"],
+        "description":"vegana session get token api"
+    },
+
+    "session.get.uid":{
+        "prefix":["session.get.uid"],
+        "body":["const ${1:var_name} = engine.session.get.uid();"],
+        "description":"vegana session get uid api"
+    },
+
+    "session.get.session_type":{
+        "prefix":["session.get.session_type"],
+        "body":["const ${1:var_name} = engine.session.get.session_type();"],
+        "description":"vegana session get session_type api"
+    },
+
+    "set.div.text":{
+        "prefix":["set.div.text"],
+        "body":["engine.set.div.text(${1:element_id},\"${2:new_value}\");"],
+        "description":"vegana set div text api"
+    },
+
+    "set.input.value":{
+        "prefix":["set.input.value"],
+        "body":["engine.set.input.value(${1:element_id},\"${2:new_value}\");"],
+        "description":"vegana set input value api"
+    },
+
+    "set.pageTitle":{
+        "prefix":["set.pageTitle"],
+        "body":["engine.set.pageTitle(\"${2:new_value}\");"],
+        "description":"vegana set pageTitle api"
+    },
+
+    "set.style":{
+        "prefix":["set.style"],
+        "body":["engine.set.style(${1:element_id},{",
+        "\t${2:property}",
+        "});"],
+        "description":"vegana set pageTitle api"
+    },
+
+    "sketch.colors.add":{
+        "prefix":["sketch.colors.add"],
+        "body":["engine.sketch.colors.add(\"${1:color_name}\",\"${2:value}\");"],
+        "description":"vegana sketch colors add api"
+    },
+
+    "sketch.colors.get":{
+        "prefix":["sketch.colors.get"],
+        "body":["engine.sketch.colors.get(\"${1:color_name}\");"],
+        "description":"vegana sketch colors add api"
+    },
+
+    "sketch.fonts.add":{
+        "prefix":["sketch.fonts.add"],
+        "body":[
+            "engine.sketch.fonts.add(",
+                "\t\"${1:font_tag_string}\",",
+                "\t\"${2:font_name_string}\",",
+                "\t\"${3:location_url_string}\",",
+                "\t${5:is_global_boolean}",
+            ");"
+        ],
+        "description":"vegana sketch fonts add api"
+    },
+
+    "sketch.fonts.add.await":{
+        "prefix":["sketch.fonts.add.await"],
+        "body":[
+            "const ${1:var_name} = await engine.sketch.fonts.add(",
+                "\t\"${2:font_tag_string}\",",
+                "\t\"${3:font_name_string}\",",
+                "\t\"${4:location_url_string}\",",
+                "\t${5:is_global_boolean}",
+            ")",
+            ".then(()=>{return true;})",
+            ".catch(()=>{return false;});"
+        ],
+        "description":"vegana sketch fonts add api with var and await"
+    },
+
+    "ui.getComp":{
+        "prefix":["ui.getComp"],
+        "body":["const ${1:var_name} = engine.ui.getComp(\"${2:comp_name}Comp\");"],
+        "description":"vegana ui getComp api"
+    },
+
+    "validate.email":{
+        "prefix":["validate.email"],
+        "body":["const ${1:var_name} = engine.validate.email(\"${2:email}\");"],
+        "description":"vegana validate email api"
+    },
+
+    "validate.json":{
+        "prefix":["validate.json"],
+        "body":["const ${1:var_name} = engine.validate.json(${2:schema},${3:object});"],
+        "description":"vegana validate json api"
+    },
+
+    "validate.json.full":{
+        "prefix":["validate.json.full"],
+        "body":[
+            "const ${1:var_name} = engine.validate.json(",
+                "\t${2:schema},",
+                "\t${3:object},",
+                "\t${4|\"static\",\"dynamic\"|},",
+                "\t${5:max_length},",
+                "\t${6:return_error_bool}",
+            ");"
+        ],
+        "description":"vegana validate json full api"
+    },
+
+    "view.show":{
+        "prefix":["view.show"],
+        "body":["engine.view.show(${1:element_id});"],
+        "description":"vegana view show api"
+    },
+
+    "view.hide":{
+        "prefix":["view.hide"],
+        "body":["engine.view.hide(${1:element_id});"],
+        "description":"vegana view hide api"
+    },
+
+    "view.remove":{
+        "prefix":["view.remove"],
+        "body":["engine.view.remove(${1:element_id});"],
+        "description":"vegana view remove api"
+    },
+
+    "wet.set":{
+        "prefix":["wet.set"],
+        "body":["engine.wet.api.set(\"${1:url}\");"],
+        "description":"vegana wet set api"
+    },
+
+    "wet.get":{
+        "prefix":["wet.get"],
+        "body":["const ${1:var_name} = engine.wet.api.get();"],
+        "description":"vegana wet get api"
+    },
+
+    "wet.query":{
+        "prefix":["wet.query"],
+        "body":[
+            "const ${1:var_name} = await engine.wet.api.query({",
+                "\t at:\"${2:at}\",",
+                "\t body:{",
+                    "\t\t$0",
+                "\t}",
+            "});"
+        ],
+        "description":"vegana wet query api"
+    },
+
+    "wet.query.full":{
+        "prefix":["wet.query.full"],
+        "body":[
+            "const ${1:var_name} = await engine.wet.api.query({",
+                "\t at:\"${2:at}\",",
+                "\t method:\"${3|post,get,put,delete|}\",",
+                "\t headers:{",
+                    "\t\t$4",
+                "\t},",
+                "\t body:{",
+                    "\t\t$5",
+                "\t}",
+            "});"
+        ],
+        "description":"vegana wet query full api"
     }
 
 }

@@ -2,7 +2,7 @@
 	"name": "veganavscode",
 	"displayName": "veganaVsCode",
 	"description": "autocompletion for vegana js",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
