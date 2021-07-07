@@ -1,65 +1,92 @@
 # veganavscode README
 
-This is the README for your extension "veganavscode". After writing up a brief description, we recommend including the following sections.
+this is code snipptes, highlighting and tips for vegana js development.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+fast code snippets saves time formating vegana js apis.
 
-For example if there is an image subfolder under your extension project workspace:
+### api snippets
 
-\!\[feature X\]\(images/feature-x.png\)
+majority of apis are placed in there respective subsections like get,set,wet,router
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+few apis are directly exposed for speed like make sub apis can be directly accessed like div,input,element,select,list etc.
 
-## Requirements
+navigator apis are directly exposed vis nav.sub_api ie nav.comp for engine.router.navigate.to.comp similarly nav.page,nav.cont and nav.panel are directly exposed for faster access.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+router init apis are explosed via router subsection ie engine.router.init.comps is exposed via router.comps similarly router.conts and router.panels are explosed via this sub setion.
 
-## Extension Settings
+### custom snippets
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+a lot of code is reapeted when we check variables and return some values so there are some custom snippets provided to make development speed faster.
 
-For example:
+#### check snipets
 
-This extension contributes the following settings:
+##### check var is not false, undefined or null.
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+```
+//input
+check
 
-## Known Issues
+//output
+if(!var_name){
+    work
+}
+```
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+##### check array have some items
 
-## Release Notes
+```
+//input
+check.array_len
 
-Users appreciate release notes as you update your extension.
+//output
+if(!(var_name instanceof Array) || var_name.length === 0){
+    work
+}
+```
 
-### 1.0.0
+##### check object have some keys
 
-Initial release of ...
+```
+//input
+check.object_len
 
-### 1.0.1
+//output
+if(!(var_name instanceof Object) || Object.keys(var_name).length === 0){
+    work
+}
+```
 
-Fixed issue #.
+#### return snipets
 
-### 1.1.0
+##### return true
 
-Added features X, Y, and Z.
+```
+//input
+.r
 
------------------------------------------------------------------------------------------------------------
+//output
+return true;
+```
 
-## Working with Markdown
+##### return false
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+```
+//input
+.r!
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+//output
+return false;
+```
 
-### For more information
+##### return value
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+```
+//input
+.rv
 
-**Enjoy!**
+//output
+return some_value;
+```
+
