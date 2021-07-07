@@ -1,13 +1,15 @@
 {
+	"publisher": "tejasavdutt",
 	"name": "veganavscode",
 	"displayName": "veganaVsCode",
 	"description": "autocompletion for vegana js",
 	"version": "0.0.3",
+	"license" : "SEE LICENSE IN LICENSE.md",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
 	"categories": [
-		"Other"
+		"Extension Packs","Snippets"
 	],
 	"activationEvents": [
 		"onLanguage:javascript",
