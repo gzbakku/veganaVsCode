@@ -1,4 +1,15 @@
 {
+
+    ".style":{
+        "prefix":[".style"],
+        "body":[
+            "engine.layout.style.add(\"${1:var_name}\",{",
+            "\t${2:key}:${3:value}",
+            "});"
+        ],
+        "description":"generate a new style"
+    },
+
     ".snippet":{
         "prefix":[".snippet"],
         "body":["//#SNIPPET=${1:var_name}"],

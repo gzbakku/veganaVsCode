@@ -1,5 +1,9 @@
 
 
+//make package
+
+vsce package
+
 org is tejasavdutt
 
 generate a new publisher token 
@@ -12,4 +16,4 @@ vsce login tejasavdutt
 
 paste publisher token here
 
-vcse publish
+vsce publish
