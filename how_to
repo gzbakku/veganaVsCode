@@ -10,6 +10,6 @@ npm i -g vsce
 
 vsce login tejasavdutt
 
-paste pblisher token here
+paste publisher token here
 
 vcse publish

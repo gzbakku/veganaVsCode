@@ -1,10 +1,10 @@
 # veganavscode README
 
-this is code snipptes, highlighting and tips for vegana js development.
+this is code snippets, highlighting and tips for vegana js development.
 
 ## Features
 
-fast code snippets saves time formating vegana js apis.
+fast code snippets saves time formatting vegana js apis.
 
 ### api snippets
 
@@ -14,11 +14,11 @@ few apis are directly exposed for speed like make sub apis can be directly acces
 
 navigator apis are directly exposed vis nav.sub_api ie nav.comp for engine.router.navigate.to.comp similarly nav.page,nav.cont and nav.panel are directly exposed for faster access.
 
-router init apis are explosed via router subsection ie engine.router.init.comps is exposed via router.comps similarly router.conts and router.panels are explosed via this sub setion.
+router init apis are explored via router subsection ie engine.router.init.comps is exposed via router.comps similarly router. conts and router.panels are explored via this sub section.
 
 ### custom snippets
 
-a lot of code is reapeted when we check variables and return some values so there are some custom snippets provided to make development speed faster.
+a lot of code is repeated when we check variables and return some values so there are some custom snippets provided to make development speed faster.
 
 #### check snipets
 

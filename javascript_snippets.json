@@ -1,4 +1,18 @@
 {
+    ".snippet":{
+        "prefix":[".snippet"],
+        "body":["//#SNIPPET=${1:var_name}"],
+        "description":"generate a snippet from format"
+    },
+
+    ".snippet.new":{
+        "prefix":[".snippet.new"],
+        "body":[
+            "//SNIPPET",
+            "//name=${1:var_name}"
+        ],
+        "description":"make a snippet format"
+    },
 
     ".r!":{
         "prefix":[".r!"],

@@ -3,7 +3,7 @@
 	"name": "veganavscode",
 	"displayName": "veganaVsCode",
 	"description": "autocompletion for vegana js",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"license" : "SEE LICENSE IN LICENSE.md",
 	"engines": {
 		"vscode": "^1.57.0"
@@ -15,6 +15,7 @@
 		"onLanguage:javascript",
 		"onCommand:vegana"
 	],
+	"repository":"https://github.com/gzbakku/veganaVsCode",
 	"main": "./extension.js",
 	"contributes": {
 		"snippets": [
